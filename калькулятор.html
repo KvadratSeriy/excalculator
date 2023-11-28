@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Калькулятор</title>
+  <style>
+    .calculator {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    input[type="button"] {
+      width: 60px;
+      height: 60px;
+      font-size: 20px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="calculator">
+  <input type="text" id="display" disabled><br>
+  <input type="button" value="7" onclick="addToDisplay('7')">
+  <input type="button" value="8" onclick="addToDisplay('8')">
+  <input type="button" value="9" onclick="addToDisplay('9')">
+  <input type="button" value="/" onclick="addToDisplay('/')"><br>
+  <input type="button" value="4" onclick="addToDisplay('4')">
+  <input type="button" value="5" onclick="addToDisplay('5')">
+  <input type="button" value="6" onclick="addToDisplay('6')">
+  <input type="button" value="*" onclick="addToDisplay('*')"><br>
+  <input type="button" value="1" onclick="addToDisplay('1')">
+  <input type="button" value="2" onclick="addToDisplay('2')">
+  <input type="button" value="3" onclick="addToDisplay('3')">
+  <input type="button" value="-" onclick="addToDisplay('-')"><br>
+  <input type="button" value="0" onclick="addToDisplay('0')">
+  <input type="button" value="." onclick="addToDisplay('.')">
+  <input type="button" value="=" onclick="calculate()">
+  <input type="button" value="+" onclick="addToDisplay('+')"><br>
+  <input type="button" value="C" onclick="clearDisplay()">
+</div>
+
+<script>
+  function addToDisplay(value) {
+    document.getElementById('display').value += value;
+  }
+
+  function clearDisplay() {
+    document.getElementById('display').value = '';
+  }
+
+  function calculate() {
+    var expression = document.getElementById('display').value;
+    if (expression === "666") {
+      showImageAlert("https://static.wikia.nocookie.net/villains/images/1/17/SmileDog2ndHD.jpg/revision/latest?cb=20180204165734");
+    } else {
+      var result = eval(expression);
+      document.getElementById('display').value = result;
+    }
+  }
+
+  function showImageAlert(imageURL) {
+    var confirmation = window.confirm("S̷̤͍̦͈͔̥̬̳̘̩͍̳̥͔̟̘͕͎̘̪̎́̔̇̊͆̉̀̉͑̆̽̅͒͑͋̏̚̚M̴̞̬̩̞̤̗̩̪͉̳̱̗̠̥̬̫̮̲̟̱̘̰̞̌́̿̓̓͐̾̈́̂̄́̐͆̏͊̌͆Ȉ̸̭̦̗̰͕̱͙̝͈͙͔͖̩̥̯͙͙̙̩͔̲͈̘͚̒́̾͐̔̅̀̄̆̀̐̓͑̓̌L҉͖̳͕̖̟̥̰̲̪͉̟͉̘͔̝̦̱̱͚̦̝͉͚̒̈́͌̃̀͑̽̓̍͑̽̿͐̌̐̃́̍͑͌̃̔̿̿E̷̫͙̠͖̤̦̩̠̯͉̰̙̽̀͑͋̏͆̀͆̓̐̔̀̀̑̇̽̒̈́ͅ");
+    if (confirmation) {
+      var img = new Image();
+      img.src = imageURL;
+      img.style.maxWidth = "100%";
+      img.style.maxHeight = "100%";
+      document.body.appendChild(img);
+    }
+  }
+</script>
+
+</body>
+</html>
